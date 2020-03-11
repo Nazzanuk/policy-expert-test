@@ -2,6 +2,7 @@ import {addItemsToBasket, addItemToBasket, Basket, createBasket, removeItemFromB
 import {Item} from '../Item/Item';
 
 const beans: Item = {productName: 'Beans'};
+const coke: Item = {productName: 'Coke'};
 
 describe('Basket - Shopping Basket Methods', () => {
   let basket: Basket;
@@ -46,5 +47,13 @@ describe('Basket - Shopping Basket Methods', () => {
     const result = removeItemFromBasketAtIndex(1, basket);
 
     expect(result).toMatchObject(match);
+  });
+
+  it('Should be able to generate the subTotal price', () => {
+    const basket = addItemsToBasket([beans, coke]);
+
+    const result = getBasketSubtotal(basket);
+
+    expect(result).toBe(1.2);
   });
 });
