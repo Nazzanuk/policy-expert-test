@@ -6,10 +6,7 @@ const beans: Item = {productName: 'Beans'};
 const coke: Item = {productName: 'Coke'};
 const oranges: Item = {productName: 'Oranges', weight: 0.2};
 
-const discounts = [
-  threeForTwo('Beans'),
-  twoForPound('Coke'),
-];
+const discounts = [threeForTwo('Beans'), twoForPound('Coke')];
 
 describe('Basket - Shopping Basket Methods', () => {
   let basket: Basket;

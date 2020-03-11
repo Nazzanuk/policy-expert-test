@@ -2,8 +2,7 @@ import './Receipt.component.scss';
 
 import React, {FC, useContext} from 'react';
 import {BasketContext} from '../../Context/Basket.context';
-import {getItemPrice, getProductByItem, productRequiresWeight} from '../../Entities/Product/Product.helper';
-import {ProductByWeight} from '../../Entities/Product/Product';
+import {doesProductRequireWeight, getFixedItemPrice, printProductWeight} from './Receipt.component.helper';
 
 
 export const Receipt: FC = () => {
@@ -23,15 +22,14 @@ export const Receipt: FC = () => {
           <div className="header-x" onClick={() => Basket.removeItem(index)}><i className="fal fa-times"/></div>
           <div className="item">{item.productName}</div>
           <div className="item">
-            {!productRequiresWeight(getProductByItem(item)) && getItemPrice(item).toFixed(2)}
+            {!doesProductRequireWeight(item) && getFixedItemPrice(item)}
           </div>
-
         </div>
 
-        {productRequiresWeight(getProductByItem(item)) && <div className="list-item" key={index + 'weight'}>
+        {doesProductRequireWeight(item) && <div className="list-item" key={index + 'weight'}>
             <div className="header-x"/>
-            <div className="item">{item.weight}kg @ £{(getProductByItem(item) as ProductByWeight).perKg}/kg</div>
-            <div className="item">{getItemPrice(item).toFixed(2)}</div>
+            <div className="item">{printProductWeight(item)}</div>
+            <div className="item">{getFixedItemPrice(item)}</div>
         </div>}
       </>)}
 
@@ -44,13 +42,24 @@ export const Receipt: FC = () => {
       <div className="item">{Basket.getSubTotal().toFixed(2)}</div>
     </div>
     <div className="product-line"/>
+
+
+    <div className="product-list">
+      {Basket.getDiscountList().map((item, index) =>
+        <div className="list-item" key={index + item.label}>
+          <div className="item">{item.label}</div>
+          <div className="item">-{item.amount.toFixed(2)}</div>
+        </div>,
+      )}
+    </div>
+
     <div className="list-item strong">
-      <div className="item">Savings</div>
+      <div className="item">Total Savings</div>
       <div className="item">-{Basket.getDiscountAmount().toFixed(2)}</div>
     </div>
     <div className="product-line"/>
     <div className="list-item strong">
-      <div className="item">Total</div>
+      <div className="item">Total to Pay</div>
       <div className="item">{Basket.getTotal().toFixed(2)}</div>
     </div>
     <div className="product-line"/>
