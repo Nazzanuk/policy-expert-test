@@ -29,3 +29,5 @@ export const getItemsPrice = (items: Item[]): number => {
 
   return priceArray.reduce((total, item) => item + total, 0);
 };
+
+export const productRequiresWeight = (product: Product) => product.priceType === 'byWeight';

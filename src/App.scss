@@ -1,0 +1,28 @@
+body {
+  background: #f7f7f7;
+}
+
+.App {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.MuiFormControl-root {
+  width: 100%;
+}
+
+.App, body {
+  font-weight: 400;
+  font-family: 'Ubuntu', sans-serif;
+
+  .MuiFormLabel-root, .MuiAlert-message, .MuiInputBase-input, .MuiMenuItem-root, .MuiButtonBase-root, .MuiMenuItem-root, .MuiTableCell-root {
+    font-weight: 400;
+    font-family: 'Ubuntu', sans-serif;
+  }
+}

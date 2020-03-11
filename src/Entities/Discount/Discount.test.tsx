@@ -11,7 +11,7 @@ describe('Discounts', () => {
 
     const basket: Basket = createBasket([beans, beans, beans]);
 
-    const result = threeForTwo('Beans', basket);
+    const result = threeForTwo('Beans')(basket);
 
     expect(result).toMatchObject(match);
   });
@@ -24,7 +24,7 @@ describe('Discounts', () => {
 
     const basket: Basket = createBasket([beans, beans, beans, beans, beans, beans]);
 
-    const result = threeForTwo('Beans', basket);
+    const result = threeForTwo('Beans')(basket);
 
     expect(result).toMatchObject(match);
   });
@@ -34,7 +34,7 @@ describe('Discounts', () => {
 
     const basket = createBasket([coke, coke]);
 
-    const result = twoForPound('Coke', basket);
+    const result = twoForPound('Coke')(basket);
 
     expect(result).toMatchObject(match);
   });
@@ -47,7 +47,7 @@ describe('Discounts', () => {
 
     const basket: Basket = createBasket([coke, coke, coke, coke]);
 
-    const result = twoForPound('Coke', basket);
+    const result = twoForPound('Coke')(basket);
 
     expect(result).toMatchObject(match);
   });
@@ -61,8 +61,8 @@ describe('Discounts', () => {
     const basket: Basket = createBasket([coke, beans, coke, beans, beans, beans]);
 
     const result = [
-      ...twoForPound( 'Coke', basket),
-      ...threeForTwo('Beans', basket)
+      ...twoForPound('Coke')(basket),
+      ...threeForTwo('Beans')(basket),
     ];
 
     expect(result).toMatchObject(match);
