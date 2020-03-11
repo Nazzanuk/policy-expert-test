@@ -1,4 +1,4 @@
-import {curry} from 'ramda';
+import {curry, remove} from 'ramda';
 
 import {Item} from '../Item/Item';
 
@@ -17,5 +17,5 @@ export const addItemsToBasket = curry((items: Item[], basket: Basket): Basket =>
 });
 
 export const removeItemFromBasketAtIndex = curry((index: number, basket: Basket): Basket => {
-  return [];
+  return remove(index, 1, basket);
 });
