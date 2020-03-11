@@ -56,4 +56,14 @@ describe('Basket - Shopping Basket Methods', () => {
 
     expect(result).toBe(1.2);
   });
+
+  it('Should be able to generate a discount list', () => {
+    const match = [{label: 'Beans 3 for 2', amount: 0.5}];
+
+    const basket = createBasket([beans, beans, beans]);
+
+    const result = getBasketDiscountList(basket);
+
+    expect(result).toMatchObject(match);
+  });
 });
