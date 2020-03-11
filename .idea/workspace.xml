@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd01955d-6c34-4ccd-a5e2-f36a8e2753b2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entities/Basket/Basket.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Basket/Basket.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entities/Basket/Basket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Basket/Basket.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583939725529</updated>
-      <workItem from="1583939726706" duration="2111000" />
+      <workItem from="1583939726706" duration="3764000" />
     </task>
     <servers />
   </component>

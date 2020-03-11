@@ -1,4 +1,4 @@
-import {addItemsToBasket, addItemToBasket, Basket, createBasket} from './Basket';
+import {addItemsToBasket, addItemToBasket, Basket, createBasket, removeItemFromBasketAtIndex} from './Basket';
 import {Item} from '../Item/Item';
 
 const beans: Item = {productName: 'Beans'};
@@ -25,7 +25,7 @@ describe('Basket - Shopping Basket Methods', () => {
   it('Should be able to add an item to a basket', () => {
     const match = [beans];
 
-    const result = addItemToBasket(basket, beans);
+    const result = addItemToBasket(beans)(basket);
 
     expect(result).toMatchObject(match);
   });
@@ -34,6 +34,16 @@ describe('Basket - Shopping Basket Methods', () => {
     const match = [beans, beans];
 
     const result = addItemsToBasket(basket, [beans, beans]);
+
+    expect(result).toMatchObject(match);
+  });
+
+  it('Should be able to remove an item from a basket', () => {
+    const match = [beans];
+
+    const basket = createBasket([beans, beans]);
+
+    const result = removeItemFromBasketAtIndex(1, basket);
 
     expect(result).toMatchObject(match);
   });
