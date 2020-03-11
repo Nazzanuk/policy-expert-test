@@ -1,4 +1,4 @@
-import {addItemsToBasket, addItemToBasket, Basket, createBasket, removeItemFromBasketAtIndex} from './Basket';
+import {addItemsToBasket, addItemToBasket, Basket, createBasket, getBasketSubtotal, removeItemFromBasketAtIndex} from './Basket';
 import {Item} from '../Item/Item';
 
 const beans: Item = {productName: 'Beans'};
@@ -50,7 +50,7 @@ describe('Basket - Shopping Basket Methods', () => {
   });
 
   it('Should be able to generate the subTotal price', () => {
-    const basket = addItemsToBasket([beans, coke]);
+    const basket = createBasket([beans, coke]);
 
     const result = getBasketSubtotal(basket);
 

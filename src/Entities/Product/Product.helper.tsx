@@ -23,3 +23,9 @@ export const getItemPrice = (item: Item): number => {
 
   return floatToTwoDP(product.perKg * item.weight);
 };
+
+export const getItemsPrice = (items: Item[]): number => {
+  const priceArray: number[] = items.map(getItemPrice);
+
+  return priceArray.reduce((total, item) => item + total, 0);
+};
