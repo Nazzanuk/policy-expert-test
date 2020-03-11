@@ -4,6 +4,7 @@ import {threeForTwo, twoForPound} from '../Discount/Discount';
 
 const beans: Item = {productName: 'Beans'};
 const coke: Item = {productName: 'Coke'};
+const oranges: Item = {productName: 'Oranges', weight: 0.2};
 
 const discounts = [
   threeForTwo('Beans'),
@@ -71,5 +72,25 @@ describe('Basket - Shopping Basket Methods', () => {
     const result = getBasketDiscountList(discounts, basket);
 
     expect(result).toMatchObject(match);
+  });
+
+  it('Should be able to generate savings amount', () => {
+    const items = [beans, beans, beans, coke, beans, coke, coke, beans, beans, beans];
+    const match = 1.4;
+
+    const basket = createBasket(items);
+
+    const result = getBasketDiscountAmount(basket);
+
+    expect(result).toBe(match);
+  });
+
+  it('Should be able to generate the total price', () => {
+    const items = [beans, beans, beans, coke, coke, oranges];
+
+    const basket = createBasket(items);
+    const result = getBasketTotal(basket);
+
+    expect(result).toBe(2.4);
   });
 });
