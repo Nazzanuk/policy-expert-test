@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd01955d-6c34-4ccd-a5e2-f36a8e2753b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entities/Item/Item.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entities/Product/Product.helper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Helpers/Number.helpers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Basket/Basket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Basket/Basket.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Item/Item.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Item/Item.test.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +20,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Entities/Product" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
@@ -28,6 +29,7 @@
       <recent name="$PROJECT_DIR$/src/Entities/Product" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/Entities/Product" />
       <recent name="$PROJECT_DIR$/src/Entities/Item" />
       <recent name="$PROJECT_DIR$/src/Entities" />
@@ -73,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583939725529</updated>
-      <workItem from="1583939726706" duration="4337000" />
+      <workItem from="1583939726706" duration="4808000" />
     </task>
     <servers />
   </component>

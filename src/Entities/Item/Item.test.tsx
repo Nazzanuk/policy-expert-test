@@ -1,4 +1,5 @@
 import {Item} from './Item';
+import {getItemPrice, getProductByItem} from '../Product/Product.helper';
 
 const beans: Item = {productName: 'Beans'};
 const oranges: Item = {productName: 'Oranges', weight: 0.2};
@@ -17,7 +18,7 @@ describe('Item / Product Information Methods', () => {
   });
 
   it('Should be able to get the price of an item by weight', () => {
-    const result = getItemPrice(oranges);
+    const result = getItemPrice({productName: 'Oranges', weight: 1});
 
     expect(result).toEqual(1.99);
   });
