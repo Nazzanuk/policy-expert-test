@@ -1,8 +1,14 @@
-import {addItemsToBasket, addItemToBasket, Basket, createBasket, getBasketSubtotal, removeItemFromBasketAtIndex} from './Basket';
+import {addItemsToBasket, addItemToBasket, Basket, createBasket, getBasketDiscountList, getBasketSubtotal, removeItemFromBasketAtIndex} from './Basket';
 import {Item} from '../Item/Item';
+import {threeForTwo, twoForPound} from '../Discount/Discount';
 
 const beans: Item = {productName: 'Beans'};
 const coke: Item = {productName: 'Coke'};
+
+const discounts = [
+  threeForTwo('Beans'),
+  twoForPound('Coke'),
+];
 
 describe('Basket - Shopping Basket Methods', () => {
   let basket: Basket;
@@ -62,7 +68,7 @@ describe('Basket - Shopping Basket Methods', () => {
 
     const basket = createBasket([beans, beans, beans]);
 
-    const result = getBasketDiscountList(basket);
+    const result = getBasketDiscountList(discounts, basket);
 
     expect(result).toMatchObject(match);
   });

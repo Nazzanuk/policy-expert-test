@@ -1,4 +1,4 @@
-import {times} from 'ramda';
+import {curry, times} from 'ramda';
 
 import {Item} from '../Item/Item';
 import {getProductByName} from '../Product/Product.helper';
@@ -11,9 +11,9 @@ export interface Discount {
   amount: number;
 }
 
-export type DiscountFunction = (productName: string, basket: Basket) => Discount[];
+export type DiscountFunction = ReturnType<typeof threeForTwo>;
 
-export const threeForTwo: DiscountFunction = (productName, basket) => {
+export const threeForTwo = curry((productName: string, basket: Basket) => {
   const product = getProductByName(productName) as ProductByValue;
 
   const matchingItems: number = basket.reduce((amount: number, item: Item) => {
@@ -24,9 +24,9 @@ export const threeForTwo: DiscountFunction = (productName, basket) => {
 
   const sets: number = Math.floor(matchingItems / 3);
   return times(() => ({label: `${productName} 3 for 2`, amount: product.value}), sets);
-};
+});
 
-export const twoForPound: DiscountFunction = (productName, basket): Discount[] => {
+export const twoForPound: DiscountFunction = curry((productName, basket): Discount[] => {
   const product = getProductByName(productName) as ProductByValue;
 
   const matchingItems: number = basket.reduce((amount: number, item: Item) => {
@@ -38,4 +38,4 @@ export const twoForPound: DiscountFunction = (productName, basket): Discount[] =
   const sets: number = Math.floor(matchingItems / 2);
 
   return times(() => ({label: `${productName} 2 for £1`, amount: fixFloat((product.value * 2) - 1)}), sets);
-};
+});
