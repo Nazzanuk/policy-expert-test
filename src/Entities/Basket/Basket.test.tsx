@@ -1,4 +1,4 @@
-import {addItemsToBasket, addItemToBasket, Basket, createBasket, getBasketDiscountList, getBasketSubtotal, removeItemFromBasketAtIndex} from './Basket';
+import {addItemsToBasket, addItemToBasket, Basket, createBasket, getBasketDiscountAmount, getBasketDiscountList, getBasketSubtotal, getBasketTotal, removeItemFromBasketAtIndex} from './Basket';
 import {Item} from '../Item/Item';
 import {threeForTwo, twoForPound} from '../Discount/Discount';
 
@@ -80,7 +80,7 @@ describe('Basket - Shopping Basket Methods', () => {
 
     const basket = createBasket(items);
 
-    const result = getBasketDiscountAmount(basket);
+    const result = getBasketDiscountAmount(discounts, basket);
 
     expect(result).toBe(match);
   });
@@ -89,7 +89,7 @@ describe('Basket - Shopping Basket Methods', () => {
     const items = [beans, beans, beans, coke, coke, oranges];
 
     const basket = createBasket(items);
-    const result = getBasketTotal(basket);
+    const result = getBasketTotal(discounts, basket);
 
     expect(result).toBe(2.4);
   });

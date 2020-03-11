@@ -34,3 +34,11 @@ export const getBasketSubtotal = (basket: Basket): number => {
 export const getBasketDiscountList = (discounts: any[], basket: Basket): Discount[] => {
   return discounts.reduce((list: Discount[], discount) => [...list, ...discount(basket)], []);
 };
+
+export const getBasketTotal = (discounts: any[], basket: Basket): number => {
+  return floatToTwoDP(getBasketSubtotal(basket) - getBasketDiscountAmount(discounts, basket));
+};
+
+export const getBasketDiscountAmount = (discounts: any[], basket: Basket): number => {
+  return floatToTwoDP(getBasketDiscountList(discounts, basket).reduce((total, discount) => total + discount.amount, 0));
+};
