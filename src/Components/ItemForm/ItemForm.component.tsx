@@ -51,6 +51,7 @@ export const ItemForm: FC = () => {
         <Grid item sm={4} hidden={!productRequiresWeight(product)}>
           <TextField required={productRequiresWeight(product)}
                      disabled={!productRequiresWeight(product)}
+                     data-test-id="weight-input"
                      label="Weight (kg)"
                      type="number"
                      value={weight}
